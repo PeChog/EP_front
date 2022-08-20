@@ -4,11 +4,11 @@ body {
 
 @font-face {
   font-family: "Basteleur-Moonlight";
-  src: url("./Basteleur-Moonlight.woff") format("woff");
+  src: url("./assets/fonts/Basteleur-Moonlight.woff") format("woff");
 }
 @font-face {
   font-family: "Basteleur-Bold";
-  src: url("./Basteleur-Bold.woff") format("woff");
+  src: url("./assets//fonts/Basteleur-Bold.woff") format("woff");
 }
 
 .logo {
@@ -49,6 +49,7 @@ body {
 .container {
   width: 90%;
   margin: auto;
+  position: relative;
 }
 
 .caroussel {
@@ -136,4 +137,105 @@ body {
 .carousselImage {
   width: 100%;
   height: 100%;
+}
+
+/* GLOBAL */
+.modal{
+  height: 50vh;
+  width: 70vw;
+
+  background-color: white;
+
+  /* border: solid black 1px; */
+  border-radius: 5px;
+
+  position: absolute;
+  top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  padding: 2%;
+  
+}
+
+/* BACKOFFICE STYLE */
+
+.read{
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createButton{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+
+  color: white;
+  background-color: #008000;
+
+  margin: 3%;
+}
+.updateButton{
+  padding: 3px 10px;
+  border-radius: 5px;
+  border: none;
+
+  color: white;
+  background-color: #EED202;
+
+  /* margin: 3%; */
+}
+.deleteButton{
+  padding: 3px 10px;
+  border-radius: 5px;
+  border: none;
+
+  color: white;
+  background-color:  #D0342C;
+
+  /* margin: 3%; */
+}
+
+table{
+  width: 80%;
+  text-align: center;
+  border-collapse: collapse;
+}
+td{
+  padding: 1%;
+
+}
+tr{
+  border: black solid 1px;
+}
+
+.reorderIcon:hover{
+  cursor: pointer;
+}
+
+.reorderButton{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+
+  color: white;
+  background-color: #EED202;
+
+
+  margin: 3%;
+}
+
+/* Create */
+.createContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
 }
