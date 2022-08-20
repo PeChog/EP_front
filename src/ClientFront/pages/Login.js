@@ -1,39 +1,51 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
+// import "../App.css";
 
 const Login = ({ handleToken }) => {
+  const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
-
   const handleLogin = async (event) => {
+    setErrorMessage("");
+    setIsLoading(true);
     try {
       event.preventDefault();
       const response = await axios.post("http://localhost:3000/auth", {
         email,
         password,
       });
-      handleToken(response.data.token);
-      navigate("/auth");
+      if (response.data.token) {
+        handleToken(response.data.token);
 
-      // console.log(response.data);
-      // if (response.data.token) {
-      //   // setUser(response.data.token);
-      //   // redirection
-      //   navigate("/backoffice");
-      // }
+        navigate("/backoffice");
+      } else if (response.data.message) {
+        setErrorMessage(response.data.message);
+      }
+      console.log(response.data);
     } catch (error) {
-      console.log(error.message);
+      setErrorMessage(error.message);
     }
+
+    setIsLoading(false);
   };
 
   return (
     <div className="containerLogin">
       <form onSubmit={handleLogin}>
         <h1 className="login">Login</h1>
+        {errorMessage ? (
+          <div>
+            <p style={{ fontSize: 20, fontWeight: "bold", color: "red" }}>
+              {errorMessage}
+            </p>
+          </div>
+        ) : null}
         <input
           value={email}
           placeholder="email"
