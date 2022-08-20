@@ -28,13 +28,13 @@ const BackofficeHome = ({ handleToken }) => {
   // };
   return (
     <div>
-      {/* <button
+      <button
         onClick={() => {
           handleToken(null);
           navigate("/auth");
         }}>
         Deconnexion
-      </button> */}
+      </button>
       <Link to={"/"}>Retour sur le site</Link>
 
       <h1 style={{ textAlign: "center" }}>BackOffice</h1>

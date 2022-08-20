@@ -82,35 +82,42 @@ function Home() {
           </div>
           <div className="caroussel">
             {dataImage &&
-              dataImage.map((image, index) => {
-                if (index === activeSlideIndex) {
-                  return (
-                    <img
-                      src={image.image}
-                      className="carousselImage"
-                      onClick={() => {
-                        if (sensDefilementImage) {
-                          if (activeSlideIndex < dataImage.length - 1) {
-                            setActiveSlideIndex((prevState) => prevState + 1);
+              dataImage
+                .sort(function (a, b) {
+                  return a.image_index - b.image_index;
+                })
+                .map((image, index) => {
+                  if (index === activeSlideIndex) {
+                    return (
+                      <img
+                        src={image.image}
+                        className="carousselImage"
+                        onClick={() => {
+                          if (sensDefilementImage) {
+                            if (activeSlideIndex < dataImage.length - 1) {
+                              setActiveSlideIndex((prevState) => prevState + 1);
 
-                            if (activeSlideIndex + 1 === dataImage.length - 1) {
-                              setSensDefilementImage(false);
+                              if (
+                                activeSlideIndex + 1 ===
+                                dataImage.length - 1
+                              ) {
+                                setSensDefilementImage(false);
+                              }
                             }
-                          }
-                        } else {
-                          if (activeSlideIndex > 0) {
-                            setActiveSlideIndex((prevState) => prevState - 1);
-                            console.log(activeSlideIndex);
-                            if (activeSlideIndex - 1 === 0) {
-                              setSensDefilementImage(true);
+                          } else {
+                            if (activeSlideIndex > 0) {
+                              setActiveSlideIndex((prevState) => prevState - 1);
                               console.log(activeSlideIndex);
+                              if (activeSlideIndex - 1 === 0) {
+                                setSensDefilementImage(true);
+                                console.log(activeSlideIndex);
+                              }
                             }
                           }
-                        }
-                      }}></img>
-                  );
-                }
-              })}
+                        }}></img>
+                    );
+                  }
+                })}
           </div>
         </div>
       </div>
