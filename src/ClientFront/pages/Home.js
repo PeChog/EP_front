@@ -51,7 +51,12 @@ function Home() {
             Eliott Paquet
           </h1>
           <div className="info">
-            <div>DWNLD PDF</div>
+            <a
+              href={"http://localhost:3000/download/pdf"}
+              download
+              style={{ cursor: "pointer" }}>
+              DWNLD PDF
+            </a>
             <div
               onClick={() => {
                 setModalContact(true);
