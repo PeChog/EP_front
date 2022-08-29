@@ -28,23 +28,29 @@ const BackofficeHome = ({ handleToken }) => {
   // };
   return (
     <div>
-      <button
-        onClick={() => {
-          handleToken(null);
-          navigate("/auth");
-        }}>
-        Deconnexion
-      </button>
-      <Link to={"/"}>Retour sur le site</Link>
-
-      <h1 style={{ textAlign: "center" }}>BackOffice</h1>
-
+      <div className="headerBack">
+        <Link to={"/"} className="retourSite">
+          Retour sur le site
+        </Link>
+        <h1 className="backOfficeTitle">BackOffice</h1>
+        <button
+          className="deconnexion"
+          onClick={() => {
+            handleToken(null);
+            navigate("/auth");
+          }}
+        >
+          Déconnexion
+        </button>
+      </div>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
-        <Link to={"/CrudExpositions"}>
-          Creer, Modifier, Supprimer des dates et expositions
+        <Link className="expositionsBack" to={"/CrudExpositions"}>
+          Créer, Modifier, Supprimer des dates et expositions
         </Link>
 
-        <Link to={"/CrudImages"}>Creer, Modifier, Supprimer des images</Link>
+        <Link className="imagesBack" to={"/CrudImages"}>
+          Créer, Modifier, Supprimer des images
+        </Link>
 
         {/* <form
           onSubmit={(e) => {

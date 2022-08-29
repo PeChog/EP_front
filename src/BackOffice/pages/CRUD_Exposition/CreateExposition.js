@@ -43,7 +43,9 @@ const CreateExposition = ({ handleToken }) => {
     </div>
   ) : (
     <div>
-      <h1 style={{ textAlign: "center" }}>Create</h1>
+      <h1 style={{ textAlign: "center", fontFamily: "Basteleur-Moonlight" }}>
+        Créer une exposition
+      </h1>
       {errorMessage ? (
         <h4 style={{ color: "red", textAlign: "center" }}>{errorMessage}</h4>
       ) : null}
@@ -54,13 +56,20 @@ const CreateExposition = ({ handleToken }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onSubmit={sumbitNewExposition}>
+        onSubmit={sumbitNewExposition}
+      >
         <input
           value={date}
           type="text"
           placeholder="titre / date"
           onChange={(e) => {
             setDate(e.target.value);
+          }}
+          style={{
+            width: "600px",
+            height: "20px",
+            borderRadius: "10px",
+            fontFamily: "Sprat-ExtendedLight",
           }}
         />
         <input
@@ -70,8 +79,28 @@ const CreateExposition = ({ handleToken }) => {
           onChange={(e) => {
             setDescription(e.target.value);
           }}
+          style={{
+            width: "600px",
+            marginTop: "10px",
+            borderRadius: "10px",
+            height: "500px",
+            fontFamily: "Sprat-ExtendedLight",
+          }}
         />
-        <input type="submit" />
+        <input
+          type="submit"
+          style={{
+            color: "black",
+            fontFamily: "Basteleur-Moonlight",
+            width: "250px",
+            height: "30px",
+            borderBottom: "black",
+
+            border: "none",
+            borderBottom: "2px solid black",
+            marginTop: "10px",
+          }}
+        />
       </form>
     </div>
   );

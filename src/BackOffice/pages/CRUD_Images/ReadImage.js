@@ -76,9 +76,7 @@ const ReadImage = () => {
     <div className="read">
       <Link to={"/backoffice"}>Accueil backoffice</Link>
 
-      <h1 style={{ textAlign: "center", marginBottom: 0 }}>
-        Toutes les Images
-      </h1>
+      <h1 style={{ textAlign: "center", marginBottom: 0 }}>Images</h1>
 
       {errorMessage ? (
         <h4 style={{ color: "red", textAlign: "center" }}>{errorMessage}</h4>
@@ -89,15 +87,17 @@ const ReadImage = () => {
           onClick={() => {
             navigate("/createImage", { state: { index: images.length } });
           }}
-          className={"createButton"}>
-          Creer une nouvelle entrée
+          className={"createButton"}
+        >
+          Ajouter une nouvelle image
         </button>
 
         <button
           onClick={() => {
             setReorderButton(true);
           }}
-          className={"reorderButton"}>
+          className={"reorderButton"}
+        >
           Reorganiser les images
         </button>
       </div>
@@ -145,7 +145,8 @@ const ReadImage = () => {
 
                           handleDelete(item._id, index);
                         }}
-                        className={"deleteButton"}>
+                        className={"deleteButton"}
+                      >
                         Supprimer
                       </button>
                     </td>
@@ -166,7 +167,8 @@ const ReadImage = () => {
 
                               setImages(copyImages);
                             }
-                          }}>
+                          }}
+                        >
                           ▲
                         </td>
                         <td
@@ -184,7 +186,8 @@ const ReadImage = () => {
                               console.log(images);
                               setImages(copyImages);
                             }
-                          }}>
+                          }}
+                        >
                           ▼
                         </td>
                       </>

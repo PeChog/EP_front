@@ -57,9 +57,7 @@ const ReadExposition = () => {
     <div className="read">
       <Link to={"/backoffice"}>Accueil backoffice</Link>
 
-      <h1 style={{ textAlign: "center", marginBottom: 0 }}>
-        Toutes les Expositions
-      </h1>
+      <h1 style={{ textAlign: "center", marginBottom: 0 }}>Expositions</h1>
 
       {errorMessage ? (
         <h4 style={{ color: "red", textAlign: "center" }}>{errorMessage}</h4>
@@ -69,8 +67,9 @@ const ReadExposition = () => {
         onClick={() => {
           navigate("/createExposition");
         }}
-        className={"createButton"}>
-        Creer une nouvelle entrée
+        className={"createButton"}
+      >
+        Créer une nouvelle exposition
       </button>
 
       <table>
@@ -99,7 +98,8 @@ const ReadExposition = () => {
 
                         handleDelete(item._id, index);
                       }}
-                      className={"deleteButton"}>
+                      className={"deleteButton"}
+                    >
                       Supprimer
                     </button>
                   </td>

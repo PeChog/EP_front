@@ -1,5 +1,6 @@
 body {
   background-color: #f7f7e7;
+  margin-top: -5px;
 }
 
 @font-face {
@@ -11,19 +12,30 @@ body {
   src: url("./assets//fonts/Basteleur-Bold.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Sprat-ExtendedBold";
+  src: url("./assets//fonts/Sprat-ExtendedBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Sprat-ExtendedLight";
+  src: url("./assets//fonts/Sprat-ExtendedLight.otf") format("opentype");
+}
+
 .logo {
   font-family: "Basteleur-Bold";
   font-size: 60px;
   height: 100px;
-  width: 462px;
+  width: 480px;
   color: white;
-  /* border: 1px solid red;
-  border-color: black; */
+  margin-left: -10px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  outline-color: black;
+  outline-color: gray;
   -webkit-text-stroke: 0.2px black;
+  /* overflow: hidden; */
 }
 
 .header {
@@ -32,33 +44,78 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* overflow: hidden; */
 }
 
 .info {
-  font-family: "tuppence", serif;
-  font-style: normal;
-  font-weight: 400;
-  height: 60px;
+  font-family: "Sprat-ExtendedLight";
+  font-size: 16px;
+
+  margin-left: 80px;
+  margin-right: -1.4px;
+  margin-top: 89px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5px;
+
+  /* overflow: hidden; */
 }
 
 .expositions {
   width: 550px;
-  /* border: solid 1px red; */
+  max-width: 550px;
+  height: 590px;
+
+  overflow: auto;
+  margin-top: 20px;
+}
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .container {
   width: 90%;
   margin: auto;
-  position: relative;
+}
+.list {
+  color: black;
+  font-family: "Sprat-ExtendedLight";
+  font-size: 12px;
+  max-width: 400px;
+}
+
+.contenuHome {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1282px;
 }
 
 .caroussel {
-  width: 1150px;
-  height: 720px;
-  border: solid white 15px;
-  outline: 0.5px solid lightgray;
+  width: 1050px;
+  height: 600px;
+  border: solid white 5px;
 
-  margin-left: 80px;
+  outline: 1.5px solid gray;
+  /* overflow: hidden; */
+
+  margin-left: 50px;
+  margin-top: 5px;
+}
+.carousselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: black 0.3px solid;
+}
+
+.gribouillis {
+  z-index: -1;
+  position: absolute;
+  margin-left: 430px;
+  margin-top: -20px;
+  overflow: hidden;
 }
 
 .main {
@@ -66,18 +123,13 @@ body {
   justify-content: space-between;
   height: 100%;
 }
-/* .expositions {
-  font-family: 
-} */
-.collectives {
-  font-size: 20px;
-  text-decoration: underline;
-  font-family: "Basteleur-Bold";
-}
 
-.list {
-  color: black;
-  font-family: "Basteleur-Moonlight";
+.collectives {
+  font-size: 15px;
+  text-decoration: underline;
+  font-family: "Sprat-ExtendedBold";
+  position: absolute;
+  margin-top: -21px;
 }
 
 /* .description {
@@ -134,108 +186,228 @@ body {
   border-radius: 10px;
 }
 
-.carousselImage {
-  width: 100%;
-  height: 100%;
-}
-
 /* GLOBAL */
-.modal{
-  height: 50vh;
-  width: 70vw;
+.modal {
+  height: 543px;
+  width: 744px;
 
   background-color: white;
+  font-family: "Basteleur-Moonlight";
+  border: 1px gray solid;
 
   /* border: solid black 1px; */
-  border-radius: 5px;
 
   position: absolute;
   top: 30%;
-  margin-left: auto;
+  margin-left: 554px;
   margin-right: auto;
   left: 0;
   right: 0;
+  margin-top: -95px;
 
   z-index: 1000;
 
   padding: 2%;
-  
+
+  font-family: "Sprat-ExtendedLight";
 }
 
 /* BACKOFFICE STYLE */
 
-.read{
+.read {
   padding: 0 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Basteleur-Moonlight";
+  margin-top: 10px;
 }
 
-.createButton{
+.createButton {
   padding: 10px;
   border-radius: 5px;
   border: none;
 
   color: white;
   background-color: #008000;
+  font-family: "Sprat-ExtendedLight";
 
   margin: 3%;
 }
-.updateButton{
+.updateButton {
   padding: 3px 10px;
   border-radius: 5px;
   border: none;
 
   color: white;
-  background-color: #EED202;
+  background-color: #eed202;
 
   /* margin: 3%; */
 }
-.deleteButton{
+.deleteButton {
   padding: 3px 10px;
   border-radius: 5px;
   border: none;
 
   color: white;
-  background-color:  #D0342C;
+  background-color: #d0342c;
 
   /* margin: 3%; */
 }
 
-table{
+table {
   width: 80%;
   text-align: center;
   border-collapse: collapse;
 }
-td{
+td {
   padding: 1%;
-
 }
-tr{
+tr {
   border: black solid 1px;
 }
 
-.reorderIcon:hover{
+.reorderIcon:hover {
   cursor: pointer;
 }
 
-.reorderButton{
+.reorderButton {
   padding: 10px;
   border-radius: 5px;
   border: none;
 
   color: white;
-  background-color: #EED202;
-
+  background-color: #d3bb01;
+  font-family: "Sprat-ExtendedLight";
 
   margin: 3%;
 }
 
 /* Create */
-.createContainer{
+.createContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+
   align-items: center;
   min-height: 100vh;
+}
+
+.headerBack {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 150px;
+
+  height: 100px;
+}
+
+.backOfficeTitle {
+  font-family: "Basteleur-Moonlight";
+  margin-left: -20px;
+}
+
+.deconnexion {
+  font-family: "Basteleur-Moonlight";
+  border: none;
+  background-color: #f7f7e7;
+  font-size: 16px;
+}
+
+.deconnexion:hover {
+  border-bottom: 1px black solid;
+}
+
+.retourSite {
+  font-family: "Basteleur-Moonlight";
+  text-decoration: none;
+  color: black;
+}
+
+.retourSite:hover {
+  border-bottom: 1px black solid;
+}
+
+.expositionsBack {
+  height: 600px;
+  width: 500px;
+  border: solid gray 1px;
+  border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-family: "Basteleur-Moonlight";
+}
+
+.expositionsBack:hover {
+  background-color: white;
+}
+
+.imagesBack {
+  height: 600px;
+  width: 500px;
+  border: solid gray 1px;
+  border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-family: "Basteleur-Moonlight";
+}
+
+.imagesBack:hover {
+  background-color: white;
+}
+
+@media (max-width: 414px) {
+  .logo {
+    margin-top: 90px;
+    max-width: 100px;
+    height: 30px;
+    width: 80px;
+    margin-right: 135px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .contenuHome {
+    flex-direction: column-reverse;
+  }
+  .expositions {
+    margin-top: 28px;
+    width: 384px;
+    margin-left: -12px;
+  }
+  .caroussel {
+    width: 370px;
+    margin-left: -10px;
+
+    height: 230px;
+    margin-top: 90px;
+  }
+
+  .gribouillis {
+    display: none;
+  }
+
+  .container {
+    max-width: 400px;
+  }
+
+  .info {
+    margin-top: 44px;
+    margin-left: -50px;
+    display: flex;
+    flex-direction: row;
+
+    gap: 270px;
+  }
+  .contactDiv {
+    margin-left: 50px;
+  }
 }

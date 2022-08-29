@@ -37,22 +37,26 @@ function App() {
         {!Cookies.get("userToken") ? (
           <Route
             path="/auth"
-            element={<Login handleToken={handleToken} />}></Route>
+            element={<Login handleToken={handleToken} />}
+          ></Route>
         ) : (
           <>
             <Route
               path="/backoffice"
-              element={<BackofficeHome handleToken={handleToken} />}></Route>
+              element={<BackofficeHome handleToken={handleToken} />}
+            ></Route>
 
             <Route path="/CrudExpositions" element={<ReadExposition />}></Route>
 
             <Route
               path="/createExposition"
-              element={<CreateExposition />}></Route>
+              element={<CreateExposition />}
+            ></Route>
 
             <Route
               path="/updateExposition"
-              element={<UpdateExposition />}></Route>
+              element={<UpdateExposition />}
+            ></Route>
 
             <Route path="/CrudImages" element={<ReadImage />}></Route>
 

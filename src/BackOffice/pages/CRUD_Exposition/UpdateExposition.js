@@ -28,7 +28,8 @@ const UpdateExposition = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-        }}>
+        }}
+      >
         <input
           value={dateUpdate}
           type="text"

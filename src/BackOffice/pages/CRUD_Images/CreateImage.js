@@ -55,9 +55,17 @@ const CreateImage = ({ handleToken }) => {
     </div>
   ) : (
     <div className="createContainer">
-      <h1 style={{ textAlign: "center" }}>Create</h1>
+      <h1 style={{ fontFamily: "Basteleur-Moonlight" }}>Create</h1>
       {errorMessage ? (
-        <h4 style={{ color: "red", textAlign: "center" }}>{errorMessage}</h4>
+        <h4
+          style={{
+            color: "red",
+            textAlign: "center",
+            fontFamily: "Basteleur-Moonlight",
+          }}
+        >
+          {errorMessage}
+        </h4>
       ) : null}
 
       <form
@@ -66,12 +74,17 @@ const CreateImage = ({ handleToken }) => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          fontFamily: "Basteleur-Moonlight",
         }}
-        onSubmit={submitNewImage}>
+        onSubmit={submitNewImage}
+      >
         <input
           type="file"
           onChange={(e) => {
             setImageToUpload(e.target.files[0]);
+          }}
+          style={{
+            fontFamily: "Basteleur-Moonlight",
           }}
         />
 
@@ -83,9 +96,24 @@ const CreateImage = ({ handleToken }) => {
             e.preventDefault();
             setTitle(e.target.value);
           }}
+          style={{ fontFamily: "Basteleur-Moonlight", marginTop: "10px" }}
         />
 
-        <input type="submit" />
+        <input
+          type="submit"
+          style={{
+            fontFamily: "Basteleur-Moonlight",
+            color: "black",
+
+            width: "250px",
+            height: "30px",
+            borderBottom: "black",
+
+            border: "none",
+            borderBottom: "2px solid black",
+            marginTop: "10px",
+          }}
+        />
       </form>
       {imageToUpload ? (
         <img src={URL.createObjectURL(imageToUpload)} alt="" />
