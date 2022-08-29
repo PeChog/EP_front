@@ -82,6 +82,15 @@ function Home() {
           </div>
 
           <div className="info">
+<<<<<<< HEAD
+=======
+            <a
+              href={"http://localhost:3000/download/pdf"}
+              download
+              style={{ cursor: "pointer" }}>
+              DWNLD PDF
+            </a>
+>>>>>>> bce9459597e9301a89bbbb75681b1ed5b0bd93f3
             <div
               className="contactDiv"
               onClick={() => {

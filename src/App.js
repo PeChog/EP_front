@@ -14,6 +14,8 @@ import UpdateExposition from "./BackOffice/pages/CRUD_Exposition/UpdateExpositio
 import ReadImage from "./BackOffice/pages/CRUD_Images/ReadImage";
 import CreateImage from "./BackOffice/pages/CRUD_Images/CreateImage";
 
+import AddPdf from "./BackOffice/pages/AddPdf";
+
 import Home from "./ClientFront/pages/Home";
 import Login from "./ClientFront/pages/Login";
 
@@ -61,6 +63,8 @@ function App() {
             <Route path="/CrudImages" element={<ReadImage />}></Route>
 
             <Route path="/createImage" element={<CreateImage />}></Route>
+
+            <Route path="/addPdf" element={<AddPdf />}></Route>
           </>
         )}
       </Routes>
