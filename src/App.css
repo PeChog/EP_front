@@ -22,6 +22,16 @@ body {
   src: url("./assets//fonts/Sprat-ExtendedLight.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Sprat-RegularThin";
+  src: url("./assets//fonts/Sprat-RegularThin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Sprat-RegularBold";
+  src: url("./assets//fonts/Sprat-RegularBold.otf") format("opentype");
+}
+
 .logo {
   font-family: "Basteleur-Bold";
   font-size: 60px;
@@ -49,7 +59,7 @@ body {
 
 .info {
   font-family: "Sprat-ExtendedLight";
-  font-size: 16px;
+  font-size: 18px;
 
   margin-left: 80px;
   margin-right: -1.4px;
@@ -82,7 +92,7 @@ body {
 .list {
   color: black;
   font-family: "Sprat-ExtendedLight";
-  font-size: 12px;
+  font-size: 15px;
   max-width: 400px;
 }
 
@@ -100,7 +110,7 @@ body {
   outline: 1.5px solid gray;
   /* overflow: hidden; */
 
-  margin-left: 50px;
+  margin-left: 48px;
   margin-top: 5px;
 }
 .carousselImage {
@@ -108,6 +118,10 @@ body {
   height: 100%;
   object-fit: cover;
   border: black 0.3px solid;
+}
+
+.carousselImage:hover {
+  cursor: e-resize;
 }
 
 .gribouillis {
@@ -125,9 +139,9 @@ body {
 }
 
 .collectives {
-  font-size: 15px;
-  text-decoration: underline;
-  font-family: "Sprat-ExtendedBold";
+  font-size: 20px;
+
+  font-family: "Sprat-RegularBold";
   position: absolute;
   margin-top: -21px;
 }
@@ -294,16 +308,16 @@ tr {
 
 .headerBack {
   display: flex;
-  justify-content: space-around;
+
   align-items: center;
-  gap: 150px;
+  justify-content: center;
 
   height: 100px;
+  margin-right: 455px;
 }
 
 .backOfficeTitle {
   font-family: "Basteleur-Moonlight";
-  margin-left: -20px;
 }
 
 .deconnexion {
@@ -321,6 +335,7 @@ tr {
   font-family: "Basteleur-Moonlight";
   text-decoration: none;
   color: black;
+  margin-right: 300px;
 }
 
 .retourSite:hover {
@@ -329,7 +344,7 @@ tr {
 
 .expositionsBack {
   height: 600px;
-  width: 500px;
+  width: 300px;
   border: solid gray 1px;
   border-radius: 30px;
 
@@ -347,7 +362,7 @@ tr {
 
 .imagesBack {
   height: 600px;
-  width: 500px;
+  width: 300px;
   border: solid gray 1px;
   border-radius: 30px;
 
@@ -360,6 +375,24 @@ tr {
 }
 
 .imagesBack:hover {
+  background-color: white;
+}
+
+.addPdfBack {
+  height: 600px;
+  width: 300px;
+  border: solid gray 1px;
+  border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-family: "Basteleur-Moonlight";
+}
+
+.addPdfBack:hover {
   background-color: white;
 }
 
@@ -400,14 +433,14 @@ tr {
   }
 
   .info {
-    margin-top: 44px;
-    margin-left: -50px;
-    display: flex;
-    flex-direction: row;
-
-    gap: 270px;
+    margin-top: 25px;
+    margin-right: -184px;
   }
   .contactDiv {
     margin-left: 50px;
+  }
+
+  .scrollDown {
+    display: none;
   }
 }

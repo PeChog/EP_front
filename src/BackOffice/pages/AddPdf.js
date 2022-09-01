@@ -43,20 +43,27 @@ const AddPdf = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-      }}>
-      <h1>Ajouter une nouvelle brochure</h1>
+        fontFamily: "Basteleur-Moonlight",
+      }}
+    >
+      <h1 style={{ fontFamily: "Basteleur-Moonlight" }}>
+        Ajouter un nouveau PDF
+      </h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           handlePdf();
-        }}>
+        }}
+        style={{ fontFamily: "Basteleur-Moonlight" }}
+      >
         <input
           type="file"
           onChange={(e) => {
             setPdf(e.target.files[0]);
           }}
+          style={{ fontFamily: "Basteleur-Moonlight" }}
         />
-        <input type="submit" />
+        <input style={{ fontFamily: "Basteleur-Moonlight" }} type="submit" />
       </form>
     </div>
   );
