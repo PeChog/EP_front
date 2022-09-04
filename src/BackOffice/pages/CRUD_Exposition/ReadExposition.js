@@ -67,8 +67,7 @@ const ReadExposition = () => {
         onClick={() => {
           navigate("/createExposition");
         }}
-        className={"createButton"}
-      >
+        className={"createButton"}>
         Créer une nouvelle exposition
       </button>
 
@@ -84,28 +83,31 @@ const ReadExposition = () => {
 
         <tbody>
           {expositions &&
-            expositions.map((item, index) => {
-              return (
-                <tr key={index}>
-                  <td>{index}</td>
-                  <td>{item.expo_date}</td>
-                  <td>{item.expo_description}</td>
+            expositions
+              .sort((a, b) => {
+                return b.timeStamp - a.timeStamp;
+              })
+              .map((item, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{index}</td>
+                    <td>{item.expo_date}</td>
+                    <td>{item.expo_description}</td>
 
-                  <td>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
+                    <td>
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
 
-                        handleDelete(item._id, index);
-                      }}
-                      className={"deleteButton"}
-                    >
-                      Supprimer
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+                          handleDelete(item._id, index);
+                        }}
+                        className={"deleteButton"}>
+                        Supprimer
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
         </tbody>
       </table>
     </div>
