@@ -89,7 +89,9 @@ const ReadExposition = () => {
                 <tr key={index}>
                   <td>{index}</td>
                   <td>{item.expo_date}</td>
-                  <td>{item.expo_description}</td>
+                  <td style={{ whiteSpace: "pre-line" }}>
+                    {item.expo_description}
+                  </td>
 
                   <td>
                     <button
