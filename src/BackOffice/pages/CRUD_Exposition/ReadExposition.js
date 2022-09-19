@@ -12,6 +12,8 @@ const ReadExposition = () => {
 
   const [expositions, setExpositions] = useState();
 
+  const [reorderButtons, setReorderButton] = useState(false);
+
   const handleDelete = async (id, index) => {
     try {
       const response = await axios.post(
@@ -28,6 +30,26 @@ const ReadExposition = () => {
     } catch (error) {
       setErrorMessage(error.message);
     }
+  };
+
+  const handleReorder = async (event) => {
+    event.preventDefault();
+
+    setIsLoading(true);
+    setErrorMessage("");
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/reorder/expositions",
+        {
+          expositions: JSON.stringify(expositions),
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      setErrorMessage(true);
+    }
+    setReorderButton(false);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -71,6 +93,14 @@ const ReadExposition = () => {
       >
         Créer une nouvelle exposition
       </button>
+      <button
+        onClick={() => {
+          setReorderButton(true);
+        }}
+        className={"reorderButton"}
+      >
+        Reorganiser les expositions
+      </button>
 
       <table>
         <thead>
@@ -79,6 +109,17 @@ const ReadExposition = () => {
             <th scope="col">Date</th>
             <th scope="col">Description</th>
             <th scope="col">Supprimer</th>
+            {reorderButtons && (
+              <th scope="col">
+                <button
+                  className="updateButton"
+                  style={{ marginRight: "10px" }}
+                  onClick={handleReorder}
+                >
+                  Save Order
+                </button>
+              </th>
+            )}
           </tr>
         </thead>
 
@@ -105,6 +146,48 @@ const ReadExposition = () => {
                       Supprimer
                     </button>
                   </td>
+                  {reorderButtons && (
+                    <>
+                      <td
+                        className="reorderIconExpo"
+                        onClick={() => {
+                          const copyExpositions = [...expositions];
+                          if (index > 0) {
+                            copyExpositions.splice(index, 1);
+                            copyExpositions.splice(index - 1, 0, item);
+
+                            copyExpositions.map((exposition, index) => {
+                              console.log(expositions);
+                              return (exposition.exposition_index = index);
+                            });
+
+                            setExpositions(copyExpositions);
+                          }
+                        }}
+                      >
+                        ▲
+                      </td>
+                      <td
+                        className="reorderIconExpo"
+                        onClick={() => {
+                          const copyExpositions = [...expositions];
+                          if (index < expositions.length - 1) {
+                            copyExpositions.splice(index, 1);
+
+                            copyExpositions.splice(index + 1, 0, item);
+
+                            copyExpositions.map((exposition, index) => {
+                              return (exposition.exposition_index = index);
+                            });
+                            console.log(expositions);
+                            setExpositions(copyExpositions);
+                          }
+                        }}
+                      >
+                        ▼
+                      </td>
+                    </>
+                  )}
                 </tr>
               );
             })}

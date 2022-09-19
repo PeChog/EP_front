@@ -47,6 +47,7 @@ body {
   align-items: center;
   outline-color: gray;
   -webkit-text-stroke: 0.2px black;
+  cursor: default;
   /* overflow: hidden; */
 }
 
@@ -70,6 +71,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  cursor: pointer;
 
   /* overflow: hidden; */
 }
@@ -78,11 +80,10 @@ body {
   width: 550px;
   max-width: 550px;
   height: 610px;
-  margin-top: 3px;
+  margin-top: 4px;
+  cursor: default;
 
   overflow: auto;
-
-  /* border: red solid 1px; */
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -213,7 +214,7 @@ body {
 
   position: absolute;
   top: 30%;
-  margin-left: 552.7px;
+  margin-left: 553px;
   margin-right: auto;
   left: 0;
   right: 0;
@@ -295,6 +296,10 @@ tr {
   font-family: "Sprat-ExtendedLight";
 
   margin: 3%;
+}
+
+.reorderIconExpo {
+  margin-left: -20px;
 }
 
 /* Create */
