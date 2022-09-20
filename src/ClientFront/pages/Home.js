@@ -100,23 +100,25 @@ function Home() {
           }}>
           <div className="contenuHome">
             <div className="expositions">
-              {data.map((exposition) => {
-                return (
-                  <div className="list">
-                    <div
-                      key={exposition._id}
-                      className="date"
-                      style={{
-                        marginTop: "10px",
-                      }}>
-                      {exposition.expo_date}
+              {data
+                .sort((a, b) => a.exposition_index - b.exposition_index)
+                .map((exposition) => {
+                  return (
+                    <div className="list">
+                      <div
+                        key={exposition._id}
+                        className="date"
+                        style={{
+                          marginTop: "10px",
+                        }}>
+                        {exposition.expo_date}
+                      </div>
+                      <div className="description">
+                        {exposition.expo_description}
+                      </div>
                     </div>
-                    <div className="description">
-                      {exposition.expo_description}
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
             <img
               src={require("../../assets/images/Gribouillis.png")}

@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import axios from "axios";
 
 const CreateExposition = ({ handleToken }) => {
   const navigate = useNavigate();
+  const { state } = useLocation();
+  console.log(state.index);
 
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -24,6 +26,7 @@ const CreateExposition = ({ handleToken }) => {
         {
           date,
           description,
+          index: state.index,
         }
       );
       if (!response.data.message) {
@@ -72,8 +75,6 @@ const CreateExposition = ({ handleToken }) => {
             fontFamily: "Sprat-ExtendedLight",
           }}
         />
-
-
 
         <textarea
           value={description}

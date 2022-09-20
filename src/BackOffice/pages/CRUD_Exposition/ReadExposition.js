@@ -87,7 +87,9 @@ const ReadExposition = () => {
 
       <button
         onClick={() => {
-          navigate("/createExposition");
+          navigate("/createExposition", {
+            state: { index: expositions.length },
+          });
         }}
         className={"createButton"}>
         Créer une nouvelle exposition
@@ -96,8 +98,7 @@ const ReadExposition = () => {
         onClick={() => {
           setReorderButton(true);
         }}
-        className={"reorderButton"}
-      >
+        className={"reorderButton"}>
         Reorganiser les expositions
       </button>
 
@@ -113,8 +114,7 @@ const ReadExposition = () => {
                 <button
                   className="updateButton"
                   style={{ marginRight: "10px" }}
-                  onClick={handleReorder}
-                >
+                  onClick={handleReorder}>
                   Save Order
                 </button>
               </th>
@@ -124,74 +124,72 @@ const ReadExposition = () => {
 
         <tbody>
           {expositions &&
+            expositions
+              .sort((a, b) => a.exposition_index - b.exposition_index)
+              .map((item, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{index}</td>
+                    <td>{item.expo_date}</td>
+                    <td style={{ whiteSpace: "pre-line" }}>
+                      {item.expo_description}
+                    </td>
 
-            expositions.map((item, index) => {
-              return (
-                <tr key={index}>
-                  <td>{index}</td>
-                  <td>{item.expo_date}</td>
-                  <td style={{ whiteSpace: "pre-line" }}>
-                    {item.expo_description}
-                  </td>
+                    <td>
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
 
-                  <td>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
+                          handleDelete(item._id, index);
+                        }}
+                        className={"deleteButton"}>
+                        Supprimer
+                      </button>
+                    </td>
+                    {reorderButtons && (
+                      <>
+                        <td
+                          className="reorderIconExpo"
+                          onClick={() => {
+                            const copyExpositions = [...expositions];
+                            if (index > 0) {
+                              copyExpositions.splice(index, 1);
+                              copyExpositions.splice(index - 1, 0, item);
 
-                        handleDelete(item._id, index);
-                      }}
-                      className={"deleteButton"}
-                    >
-                      Supprimer
-                    </button>
-                  </td>
-                  {reorderButtons && (
-                    <>
-                      <td
-                        className="reorderIconExpo"
-                        onClick={() => {
-                          const copyExpositions = [...expositions];
-                          if (index > 0) {
-                            copyExpositions.splice(index, 1);
-                            copyExpositions.splice(index - 1, 0, item);
+                              copyExpositions.map((exposition, index) => {
+                                console.log(expositions);
+                                return (exposition.exposition_index = index);
+                              });
 
-                            copyExpositions.map((exposition, index) => {
+                              setExpositions(copyExpositions);
                               console.log(expositions);
-                              return (exposition.exposition_index = index);
-                            });
+                            }
+                          }}>
+                          ▲
+                        </td>
+                        <td
+                          className="reorderIconExpo"
+                          onClick={() => {
+                            const copyExpositions = [...expositions];
+                            if (index < expositions.length - 1) {
+                              copyExpositions.splice(index, 1);
 
-                            setExpositions(copyExpositions);
-                          }
-                        }}
-                      >
-                        ▲
-                      </td>
-                      <td
-                        className="reorderIconExpo"
-                        onClick={() => {
-                          const copyExpositions = [...expositions];
-                          if (index < expositions.length - 1) {
-                            copyExpositions.splice(index, 1);
+                              copyExpositions.splice(index + 1, 0, item);
 
-                            copyExpositions.splice(index + 1, 0, item);
-
-                            copyExpositions.map((exposition, index) => {
-                              return (exposition.exposition_index = index);
-                            });
-                            console.log(expositions);
-                            setExpositions(copyExpositions);
-                          }
-                        }}
-                      >
-                        ▼
-                      </td>
-                    </>
-                  )}
-                </tr>
-              );
-            })}
-
+                              copyExpositions.map((exposition, index) => {
+                                return (exposition.exposition_index = index);
+                              });
+                              console.log(expositions);
+                              setExpositions(copyExpositions);
+                            }
+                          }}>
+                          ▼
+                        </td>
+                      </>
+                    )}
+                  </tr>
+                );
+              })}
         </tbody>
       </table>
     </div>
