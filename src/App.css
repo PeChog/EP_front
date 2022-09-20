@@ -64,8 +64,9 @@ body {
   font-family: "Sprat-ExtendedLight";
   font-size: 18px;
 
-  margin-left: 80px;
+   margin-left: 80px;
   margin-right: -1.4px;
+
   margin-top: 80px;
   height: 30px;
   display: flex;
@@ -73,7 +74,7 @@ body {
   align-items: flex-end;
   cursor: pointer;
 
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .expositions {
@@ -225,6 +226,10 @@ body {
   padding: 2%;
 
   font-family: "Sprat-ExtendedLight";
+
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* BACKOFFICE STYLE */
@@ -407,19 +412,40 @@ tr {
 }
 
 @media (max-width: 414px) {
-  .logo {
-    margin-top: 90px;
-    max-width: 100px;
-    height: 30px;
-    width: 80px;
-    margin-right: 135px;
-  }
+
   .header {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    /* flex-direction: column; */
+    padding: 0 10px;
+  }
+  .eliott{
+    width: 33%;
+
+  }
+  
+  .logo {
+    /* margin-top: 90px;
+    max-width: 100px;
+    height: 30px;
+    width: 25%;
+    margin-right: 135px; */
+    width: 100%;
+    font-size: 37px;
+
+    
+  }
+  .info {
+    font-family: "Sprat-ExtendedLight";
+    width: 25%;
+
+  }
+  .main{
+    justify-content: center;
   }
   .contenuHome {
     flex-direction: column-reverse;
+    align-items: center;
   }
   .expositions {
     margin-top: 28px;
@@ -427,11 +453,11 @@ tr {
     margin-left: -12px;
   }
   .caroussel {
-    width: 370px;
-    margin-left: -10px;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
 
     height: 230px;
-    margin-top: 90px;
   }
 
   .gribouillis {
@@ -442,10 +468,7 @@ tr {
     max-width: 400px;
   }
 
-  .info {
-    margin-top: 25px;
-    margin-right: -184px;
-  }
+
   .contactDiv {
     margin-left: 50px;
   }
@@ -453,4 +476,31 @@ tr {
   .scrollDown {
     display: none;
   }
+  .modal {
+    width: 100%;
+    height: 230px;
+    max-width: 100vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    background-color: white;
+    font-family: "Basteleur-Moonlight";
+    border: 1px gray solid;
+    
+
+    margin: 0;
+    margin-top: -30%;
+
+    z-index: 1000;
+  
+    padding: 2%;
+  
+    font-family: "Sprat-ExtendedLight";
+    font-size: 13px;
+  }
+
+
+
 }

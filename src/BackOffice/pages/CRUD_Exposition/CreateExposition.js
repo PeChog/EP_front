@@ -56,8 +56,7 @@ const CreateExposition = ({ handleToken }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onSubmit={sumbitNewExposition}
-      >
+        onSubmit={sumbitNewExposition}>
         <input
           value={date}
           type="text"
@@ -73,6 +72,8 @@ const CreateExposition = ({ handleToken }) => {
             fontFamily: "Sprat-ExtendedLight",
           }}
         />
+
+
 
         <textarea
           value={description}

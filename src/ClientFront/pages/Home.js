@@ -33,13 +33,7 @@ function Home() {
     <>
       {modalContact ? (
         <div className="modal">
-          <div
-            style={{
-              marginTop: "20px",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
+          <div style={{}}>
             <p>Eliott Paquet</p>
             <p>Live and work in Aubervilliers, Greater Paris, FR</p>
 
@@ -48,9 +42,8 @@ function Home() {
               <Link
                 to={{ pathname: instaURL }}
                 target={"_blank"}
-                style={{ color: "black" }}
-              >
-                https://www.instagram.com/eliott_paquet/
+                style={{ color: "black" }}>
+                Instagram
               </Link>
             </p>
 
@@ -59,8 +52,7 @@ function Home() {
               <Link
                 to={{ pathname: "//www.placementproduit.fr" }}
                 target={"_blank"}
-                style={{ color: "black" }}
-              >
+                style={{ color: "black" }}>
                 www.placementproduit.fr
               </Link>
             </p>
@@ -75,8 +67,7 @@ function Home() {
               className="logo"
               onClick={() => {
                 setModalContact(false);
-              }}
-            >
+              }}>
               Eliott Paquet
             </h1>
           </div>
@@ -86,10 +77,10 @@ function Home() {
               className="contactDiv"
               onClick={() => {
                 setModalContact(true);
-              }}
-            >
+                console.log("click");
+              }}>
               cntct
-            </div>{" "}
+            </div>
             <a
               href={"http://localhost:3000/download/pdf"}
               download
@@ -97,8 +88,7 @@ function Home() {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "black",
-              }}
-            >
+              }}>
               pdf
             </a>
           </div>
@@ -107,10 +97,10 @@ function Home() {
           className="main"
           onClick={() => {
             setModalContact(false);
-          }}
-        >
+          }}>
           <div className="contenuHome">
             <div className="expositions">
+
               {data.map((exposition) => {
                 return (
                   <div className="list">
@@ -125,17 +115,16 @@ function Home() {
                     </div>
                     <div className="description">
                       {exposition.expo_description}
+
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
             <img
               src={require("../../assets/images/Gribouillis.png")}
               alt="gribouillis"
               style={{ width: "926px", height: "675px" }}
-              className="gribouillis"
-            ></img>
+              className="gribouillis"></img>
             <div className="caroussel">
               {dataImage &&
                 dataImage
@@ -147,6 +136,7 @@ function Home() {
                       return (
                         <img
                           src={image.image}
+                          style={{ alignSelf: "center" }}
                           className="carousselImage"
                           onClick={() => {
                             if (sensDefilementImage) {
@@ -174,8 +164,7 @@ function Home() {
                                 }
                               }
                             }
-                          }}
-                        ></img>
+                          }}></img>
                       );
                     }
                   })}
@@ -191,8 +180,7 @@ function Home() {
             marginLeft: "175px",
             marginTop: "-10px",
           }}
-          className="scrollDown"
-        ></img>
+          className="scrollDown"></img>
       </div>
     </>
   );
