@@ -100,7 +100,6 @@ function Home() {
           }}>
           <div className="contenuHome">
             <div className="expositions">
-
               {data.map((exposition) => {
                 return (
                   <div className="list">
@@ -109,16 +108,15 @@ function Home() {
                       className="date"
                       style={{
                         marginTop: "10px",
-                      }}
-                    >
+                      }}>
                       {exposition.expo_date}
                     </div>
                     <div className="description">
                       {exposition.expo_description}
-
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
             <img
               src={require("../../assets/images/Gribouillis.png")}
@@ -184,7 +182,6 @@ function Home() {
       </div>
     </>
   );
-  // );
 }
 
 export default Home;
