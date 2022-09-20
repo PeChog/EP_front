@@ -60,6 +60,7 @@ const CreateExposition = ({ handleToken }) => {
         <input
           value={date}
           type="text"
+          className="expoInput"
           placeholder="titre / date"
           onChange={(e) => {
             setDate(e.target.value);
@@ -71,6 +72,9 @@ const CreateExposition = ({ handleToken }) => {
             fontFamily: "Sprat-ExtendedLight",
           }}
         />
+
+
+
         <textarea
           value={description}
           type="text"
@@ -84,6 +88,7 @@ const CreateExposition = ({ handleToken }) => {
             borderRadius: "10px",
             height: "500px",
             fontFamily: "Sprat-ExtendedLight",
+            whiteSpace: "pre-line",
           }}
         />
         <input

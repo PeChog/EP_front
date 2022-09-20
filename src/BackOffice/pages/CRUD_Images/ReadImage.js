@@ -112,7 +112,7 @@ const ReadImage = () => {
             {reorderButtons && (
               <th scope="col">
                 <button className="updateButton" onClick={handleReorder}>
-                  Save Ordre
+                  Save Order
                 </button>
               </th>
             )}

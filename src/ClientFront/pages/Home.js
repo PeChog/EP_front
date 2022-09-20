@@ -100,20 +100,22 @@ function Home() {
           }}>
           <div className="contenuHome">
             <div className="expositions">
-              <div className="collectives">Expositions Collectives</div>
-              {data
-                .sort((a, b) => {
-                  return b.timeStamp - a.timeStamp;
-                })
-                .map((exposition) => {
-                  return (
-                    <div className="list">
-                      <div key={exposition._id} className="date">
-                        {exposition.expo_date}
-                      </div>
-                      <div className="description">
-                        {exposition.expo_description}
-                      </div>
+
+              {data.map((exposition) => {
+                return (
+                  <div className="list">
+                    <div
+                      key={exposition._id}
+                      className="date"
+                      style={{
+                        marginTop: "10px",
+                      }}
+                    >
+                      {exposition.expo_date}
+                    </div>
+                    <div className="description">
+                      {exposition.expo_description}
+
                     </div>
                   );
                 })}
