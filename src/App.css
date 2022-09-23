@@ -67,7 +67,7 @@ body {
   margin-left: 80px;
   margin-right: -1.4px;
 
-  margin-top: 80px;
+  margin-top: 105px;
   height: 50px;
   display: flex;
   flex-direction: column;
@@ -205,7 +205,7 @@ body {
 /* GLOBAL */
 .modal {
   height: 543px;
-  width: 744px;
+  width: 744.5px;
 
   background-color: white;
   font-family: "Basteleur-Moonlight";
@@ -215,7 +215,7 @@ body {
 
   position: absolute;
   top: 30%;
-  margin-left: 553px;
+  margin-left: 552.5px;
   margin-right: auto;
   left: 0;
   right: 0;
@@ -227,7 +227,6 @@ body {
 
   font-family: "Sprat-ExtendedLight";
 
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -412,18 +411,17 @@ tr {
 }
 
 @media (max-width: 414px) {
-
   .header {
     display: flex;
-    width: 100%;
-    /* flex-direction: column; */
+
+    flex-direction: column;
     padding: 0 10px;
   }
-  .eliott{
-    width: 33%;
-
+  .eliott {
+    width: 35%;
+    margin-left: -248px;
   }
-  
+
   .logo {
     /* margin-top: 90px;
     max-width: 100px;
@@ -432,15 +430,20 @@ tr {
     margin-right: 135px; */
     width: 100%;
     font-size: 37px;
-
-    
+    margin-top: 32px;
   }
   .info {
     font-family: "Sprat-ExtendedLight";
-    width: 25%;
 
+    margin-right: 470px;
+    margin-top: 140px;
+    position: absolute;
   }
-  .main{
+
+  .pdf {
+    margin-right: 26.5px;
+  }
+  .main {
     justify-content: center;
   }
   .contenuHome {
@@ -448,14 +451,15 @@ tr {
     align-items: center;
   }
   .expositions {
-    margin-top: 28px;
+    margin-top: 0px;
     width: 384px;
     margin-left: -12px;
   }
   .caroussel {
     justify-content: center;
-    width: 100%;
+    width: 384px;
     margin: 0;
+    margin-top: 50px;
 
     height: 230px;
   }
@@ -467,7 +471,6 @@ tr {
   .container {
     max-width: 400px;
   }
-
 
   .contactDiv {
     margin-left: 50px;
@@ -488,19 +491,15 @@ tr {
     background-color: white;
     font-family: "Basteleur-Moonlight";
     border: 1px gray solid;
-    
 
     margin: 0;
     margin-top: -30%;
 
     z-index: 1000;
-  
+
     padding: 2%;
-  
+
     font-family: "Sprat-ExtendedLight";
     font-size: 13px;
   }
-
-
-
 }

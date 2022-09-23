@@ -93,6 +93,7 @@ function Home() {
                 textDecoration: "none",
                 color: "black",
               }}
+              className="pdf"
             >
               pdf
             </a>
