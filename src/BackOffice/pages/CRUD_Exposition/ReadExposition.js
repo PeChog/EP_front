@@ -89,7 +89,8 @@ const ReadExposition = () => {
         onClick={() => {
           navigate("/createExposition");
         }}
-        className={"createButton"}>
+        className={"createButton"}
+      >
         Créer une nouvelle exposition
       </button>
       <button
@@ -124,7 +125,6 @@ const ReadExposition = () => {
 
         <tbody>
           {expositions &&
-
             expositions.map((item, index) => {
               return (
                 <tr key={index}>
@@ -191,7 +191,6 @@ const ReadExposition = () => {
                 </tr>
               );
             })}
-
         </tbody>
       </table>
     </div>

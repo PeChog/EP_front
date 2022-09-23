@@ -42,7 +42,8 @@ function Home() {
               <Link
                 to={{ pathname: instaURL }}
                 target={"_blank"}
-                style={{ color: "black" }}>
+                style={{ color: "black" }}
+              >
                 Instagram
               </Link>
             </p>
@@ -52,7 +53,8 @@ function Home() {
               <Link
                 to={{ pathname: "//www.placementproduit.fr" }}
                 target={"_blank"}
-                style={{ color: "black" }}>
+                style={{ color: "black" }}
+              >
                 www.placementproduit.fr
               </Link>
             </p>
@@ -67,7 +69,8 @@ function Home() {
               className="logo"
               onClick={() => {
                 setModalContact(false);
-              }}>
+              }}
+            >
               Eliott Paquet
             </h1>
           </div>
@@ -78,7 +81,8 @@ function Home() {
               onClick={() => {
                 setModalContact(true);
                 console.log("click");
-              }}>
+              }}
+            >
               cntct
             </div>
             <a
@@ -88,7 +92,8 @@ function Home() {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "black",
-              }}>
+              }}
+            >
               pdf
             </a>
           </div>
@@ -97,7 +102,8 @@ function Home() {
           className="main"
           onClick={() => {
             setModalContact(false);
-          }}>
+          }}
+        >
           <div className="contenuHome">
             <div className="expositions">
               {data.map((exposition) => {
@@ -108,7 +114,8 @@ function Home() {
                       className="date"
                       style={{
                         marginTop: "10px",
-                      }}>
+                      }}
+                    >
                       {exposition.expo_date}
                     </div>
                     <div className="description">
@@ -122,7 +129,8 @@ function Home() {
               src={require("../../assets/images/Gribouillis.png")}
               alt="gribouillis"
               style={{ width: "926px", height: "675px" }}
-              className="gribouillis"></img>
+              className="gribouillis"
+            ></img>
             <div className="caroussel">
               {dataImage &&
                 dataImage
@@ -162,7 +170,8 @@ function Home() {
                                 }
                               }
                             }
-                          }}></img>
+                          }}
+                        ></img>
                       );
                     }
                   })}
@@ -178,7 +187,8 @@ function Home() {
             marginLeft: "175px",
             marginTop: "-10px",
           }}
-          className="scrollDown"></img>
+          className="scrollDown"
+        ></img>
       </div>
     </>
   );
