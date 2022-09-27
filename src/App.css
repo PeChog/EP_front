@@ -45,7 +45,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  outline-color: gray;
+  /* outline-color: gray; */
   -webkit-text-stroke: 0.2px black;
   cursor: default;
   /* overflow: hidden; */
