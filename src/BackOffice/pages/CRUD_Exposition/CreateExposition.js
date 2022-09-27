@@ -22,7 +22,7 @@ const CreateExposition = ({ handleToken }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/create/exposition",
+        "https://eliottp-backend.herokuapp.com/create/exposition",
         {
           date,
           description,
@@ -59,7 +59,8 @@ const CreateExposition = ({ handleToken }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onSubmit={sumbitNewExposition}>
+        onSubmit={sumbitNewExposition}
+      >
         <input
           value={date}
           type="text"

@@ -16,10 +16,13 @@ const Login = ({ handleToken }) => {
     setIsLoading(true);
     try {
       event.preventDefault();
-      const response = await axios.post("http://localhost:3000/auth", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://eliottp-backend.herokuapp.com/auth",
+        {
+          email,
+          password,
+        }
+      );
       if (response.data.token) {
         handleToken(response.data.token);
 

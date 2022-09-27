@@ -29,7 +29,7 @@ const CreateImage = ({ handleToken }) => {
       formData.append("title", title);
 
       const response = await axios.post(
-        "http://localhost:3000/upload/image",
+        "https://eliottp-backend.herokuapp.com/upload/image",
         formData,
         {
           headers: {

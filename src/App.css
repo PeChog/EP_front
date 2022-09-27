@@ -146,7 +146,7 @@ body {
 }
 
 .date {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-size: 20px;
 
   font-family: "Sprat-RegularBold";

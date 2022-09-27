@@ -17,7 +17,7 @@ const AddPdf = () => {
       formData.append("Pdf", pdf);
 
       const response = await axios.post(
-        "http://localhost:3000/upload/pdf",
+        "https://eliottp-backend.herokuapp.com/upload/pdf",
         formData,
         {
           headers: {

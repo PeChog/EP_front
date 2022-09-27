@@ -16,11 +16,15 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/expositions");
+      const response = await axios.get(
+        "https://eliottp-backend.herokuapp.com/expositions"
+      );
       console.log(response.data);
       setData(response.data);
 
-      const responseImage = await axios.get("http://localhost:3000/images");
+      const responseImage = await axios.get(
+        "https://eliottp-backend.herokuapp.com/images"
+      );
       console.log(responseImage.data);
       setDataImage(responseImage.data);
 
@@ -86,7 +90,7 @@ function Home() {
               cntct
             </div>
             <a
-              href={"http://localhost:3000/download/pdf"}
+              href={"https://eliottp-backend.herokuapp.com/download/pdf"}
               download
               style={{
                 cursor: "pointer",

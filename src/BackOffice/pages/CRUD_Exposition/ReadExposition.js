@@ -17,7 +17,7 @@ const ReadExposition = () => {
   const handleDelete = async (id, index) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/delete/exposition",
+        "https://eliottp-backend.herokuapp.com/delete/exposition",
         { _id: id }
       );
       if (response.data.deletedCount > 0) {
@@ -39,7 +39,7 @@ const ReadExposition = () => {
     setErrorMessage("");
     try {
       const response = await axios.post(
-        "http://localhost:3000/reorder/expositions",
+        "https://eliottp-backend.herokuapp.com/reorder/expositions",
         {
           expositions: JSON.stringify(expositions),
         }
@@ -58,7 +58,9 @@ const ReadExposition = () => {
       setErrorMessage("");
 
       try {
-        const response = await axios.get("http://localhost:3000/expositions");
+        const response = await axios.get(
+          "https://eliottp-backend.herokuapp.com/expositions"
+        );
 
         // console.log(response.data);
 

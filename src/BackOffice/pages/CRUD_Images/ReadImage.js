@@ -16,9 +16,12 @@ const ReadImage = () => {
 
   const handleDelete = async (id, index) => {
     try {
-      const response = await axios.post("http://localhost:3000/delete/image", {
-        _id: id,
-      });
+      const response = await axios.post(
+        "https://eliottp-backend.herokuapp.com/delete/image",
+        {
+          _id: id,
+        }
+      );
       if (response.data.deletedCount > 0) {
         const copyImagesArray = [...images];
 
@@ -37,9 +40,12 @@ const ReadImage = () => {
     setIsLoading(true);
     setErrorMessage("");
     try {
-      const response = await axios.post("http://localhost:3000/reorder/image", {
-        images: JSON.stringify(images),
-      });
+      const response = await axios.post(
+        "https://eliottp-backend.herokuapp.com/reorder/image",
+        {
+          images: JSON.stringify(images),
+        }
+      );
       console.log(response.data);
     } catch (error) {
       setErrorMessage(true);
@@ -54,7 +60,9 @@ const ReadImage = () => {
       setErrorMessage("");
 
       try {
-        const response = await axios.get("http://localhost:3000/images");
+        const response = await axios.get(
+          "https://eliottp-backend.herokuapp.com/images"
+        );
 
         // console.log(response.data);
 
