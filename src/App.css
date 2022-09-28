@@ -513,7 +513,7 @@ tr {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 388px), (max-width: 390px) {
   .header {
     display: flex;
 
@@ -605,7 +605,7 @@ tr {
     font-size: 13px;
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 360px) {
   .header {
     display: flex;
 
