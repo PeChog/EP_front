@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 // import ReactSimplyCarousel from "react-simply-carousel";
 import { Link } from "react-router-dom";
-
+import Logo from "../../assets/images/logo.png";
 function Home() {
   const [data, setData] = useState([]);
   const [dataImage, setDataImage] = useState([]);
@@ -69,14 +69,14 @@ function Home() {
       <div className="container" style={{ opacity: modalContact ? 0.3 : 1 }}>
         <div className="header">
           <div className="eliott">
-            <h1
-              className="logo"
+            <img
+              className="logo1"
               onClick={() => {
                 setModalContact(false);
               }}
-            >
-              Eliott Paquet
-            </h1>
+              alt="logo"
+              src={Logo}
+            />
           </div>
 
           <div className="info">
