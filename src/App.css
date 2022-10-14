@@ -1,6 +1,5 @@
 body {
   background-color: #f7f7e7;
-  margin-top: -5px;
 }
 
 @font-face {
@@ -35,10 +34,10 @@ body {
 /* HEADER */
 
 .logo1 {
-  height: 75px;
-  width: 468px;
+  width: 34vw;
   margin-left: 0px;
-  margin-top: 20px;
+  margin-top: 30px;
+  position: absolute;
 }
 
 /* .logo {
@@ -62,40 +61,51 @@ body {
 
 /* overflow: hidden; */
 
-.header {
-  width: 100%;
-  height: 140px;
+/* .header { */
+/* border: red solid 1px; */
+/* height: 20vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* overflow: hidden; */
-}
+  flex-direction: column;
+  justify-content: flex-end; */
 
+/* overflow: hidden; */
+/* } */
+.info-container {
+  display: flex;
+  justify-content: flex-end;
+}
 .info {
   font-family: "Sprat-ExtendedLight";
   font-size: 18px;
 
-  margin-left: 80px;
-  margin-right: 0px;
-
-  margin-top: 105px;
-  height: 50px;
+  height: 00px;
   display: flex;
+  position: absolute;
+  justify-content: space-between;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: flex-end;
   cursor: pointer;
+  gap: 6px;
+  margin-right: 2.6vw;
 
-  overflow: hidden;
+  /* position: absolute; */
+  margin-top: 16vh;
+  /* position: absolute; */
+}
+
+.pdf {
+  margin-left: 25px;
 }
 
 .expositions {
-  width: 550px;
-  max-width: 550px;
-  height: 610px;
-  margin-top: 4px;
+  width: 30vw;
+
+  height: 73.8vh;
+
   cursor: default;
 
   overflow: auto;
+  margin-top: 3vh;
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -103,31 +113,50 @@ body {
 
 .container {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
 }
+
 .list {
   color: black;
   font-family: "Sprat-ExtendedLight";
   font-size: 15px;
   max-width: 400px;
+  margin-top: 10px;
 }
 
 .contenuHome {
   display: flex;
-  justify-content: space-between;
-  max-width: 1282px;
-}
+  justify-content: space-around;
+  margin-top: 14vh;
 
+  /* justify-content: space-between; */
+}
+.caroussel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+  /* margin-left: 10vw; */
+  height: 80vh;
+  background-image: url(./assets/images/Gribouillis.png);
+  /* border: red solid 1px; */
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 .caroussel {
-  width: 1050px;
-  height: 600px;
+  width: 90%;
+  height: 91%;
   border: solid white 5px;
 
   outline: 1.5px solid gray;
   /* overflow: hidden; */
+  display: flex;
+  justify-content: center;
+  position: relative;
 
-  margin-left: 48px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 .carousselImage {
   width: 100%;
@@ -141,20 +170,15 @@ body {
 .carousselImage:hover {
   cursor: e-resize;
 }
-
+/* 
 .gribouillis {
-  z-index: -1;
-  position: absolute;
-  margin-left: 430px;
-  margin-top: -20px;
-  overflow: hidden;
-}
+  z-index: -1; */
 
-.main {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-}
+/* position: relative; */
+/* width: 62vw;
+  height: 76vh; */
+/* overflow: hidden;
+} */
 
 .date {
   /* text-decoration: underline; */
@@ -215,8 +239,8 @@ body {
 
 /* GLOBAL */
 .modal {
-  height: 543px;
-  width: 744.5px;
+  width: 100%;
+  height: 100.2%;
 
   background-color: white;
   font-family: "Basteleur-Moonlight";
@@ -225,21 +249,29 @@ body {
   /* border: solid black 1px; */
 
   position: absolute;
-  top: 30%;
-  margin-left: 552.5px;
-  margin-right: auto;
+
+  margin-left: -1px;
+  margin-top: -1.9px;
   left: 0;
   right: 0;
-  margin-top: -95px;
 
   z-index: 1000;
 
-  padding: 2%;
+  /* padding: 2%; */
 
   font-family: "Sprat-ExtendedLight";
 
   display: flex;
+}
+.modalcontent {
+  display: flex;
   flex-direction: column;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.modal p {
+  margin-top: 10px;
 }
 
 /* BACKOFFICE STYLE */
@@ -398,6 +430,12 @@ tr {
   background-color: white;
 }
 
+.scrollDown {
+  margin-top: -25px;
+  width: 3vw;
+  position: absolute;
+  margin-left: 12vw;
+}
 .addPdfBack {
   height: 600px;
   width: 300px;
@@ -423,277 +461,201 @@ tr {
 
 @media (max-width: 414px) {
   .header {
-    display: flex;
-
-    flex-direction: column;
-  }
-  .eliott {
-    width: 35%;
-    margin-left: -218px;
+    height: 15vh;
   }
 
   .logo1 {
-    height: 50px;
-    width: 300px;
-    object-fit: contain;
-
-    font-size: 37px;
-    margin-top: 35px;
-    margin-left: -27px;
+    margin-top: 4vh;
   }
+
   .info {
-    font-family: "Sprat-ExtendedLight";
-
-    margin-right: 450px;
-    margin-top: 100px;
-    position: absolute;
+    justify-content: flex-start;
+    margin-top: 2vh;
   }
-
+  .contactDiv {
+    margin-left: -2px;
+  }
   .pdf {
-    margin-right: 26.5px;
+    margin-left: -0.4vw;
   }
-  .main {
-    justify-content: center;
+
+  .info-container {
+    width: 92vw;
   }
+  .caroussel-container {
+    width: 100vw;
+    height: 32vh;
+    margin-top: 2vh;
+
+    background-image: none;
+  }
+  .container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .logo1 {
+    width: 80vw;
+  }
+
   .contenuHome {
+    display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
   }
-  .expositions {
-    margin-top: 0px;
-    width: 384px;
-    margin-left: -12px;
-  }
-  .caroussel {
-    justify-content: center;
-    width: 384px;
-    margin: 0;
-    margin-top: 10px;
+  /* .modal-container {
+   
+  } */
 
-    height: 230px;
-  }
-
-  .gribouillis {
-    display: none;
-  }
-
-  .container {
-    max-width: 400px;
-  }
-
-  .contactDiv {
-    margin-left: 50px;
-  }
-
-  .scrollDown {
-    display: none;
-  }
   .modal {
+    height: 28vh;
     width: 100%;
-    height: 230px;
     max-width: 100vw;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 
     background-color: white;
     font-family: "Basteleur-Moonlight";
     border: 1px gray solid;
 
-    margin: 0;
-    margin-top: -30%;
+    /* border: solid black 1px; */
 
     z-index: 1000;
 
-    padding: 2%;
-
     font-family: "Sprat-ExtendedLight";
-    font-size: 13px;
+    /* margin-left: px; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .caroussel {
+    width: 100%;
+    /* border: solid red 1px; */
+    height: 28vh;
+    margin-left: 0px;
+    width: 87vw;
+  }
+  .gribouillis {
+    display: none;
+  }
+
+  .scrollDown {
+    display: none;
+  }
+  .info-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .expositions {
+    overflow: hidden;
+    height: 100%;
+  }
+  .expositions {
+    margin-top: 0vh;
+    width: 100.5%;
   }
 }
 
-@media (max-width: 388px), (max-width: 390px) {
+@media (max-width: 414px) {
   .header {
-    display: flex;
-
-    flex-direction: column;
-  }
-  .eliott {
-    width: 35%;
-    margin-left: -180px;
+    height: 15vh;
   }
 
   .logo1 {
-    height: 50px;
-    width: 300px;
-    object-fit: contain;
-
-    font-size: 37px;
-    margin-top: 35px;
-    margin-left: -27px;
+    margin-top: 4vh;
+    position: static;
   }
+
   .info {
-    font-family: "Sprat-ExtendedLight";
-
-    margin-right: 396px;
-    margin-top: 100px;
-    position: absolute;
+    justify-content: flex-start;
+    margin-top: 2vh;
+    position: static;
   }
-
-  .pdf {
-    margin-right: 26.5px;
-  }
-  .main {
-    justify-content: center;
-    width: 250px;
-    margin-left: 30px;
-  }
-  .contenuHome {
-    align-items: center;
-  }
-  .expositions {
-    margin-top: 0px;
-    width: 333px;
-    margin-left: -13px;
-  }
-  .caroussel {
-    justify-content: center;
-    width: 330px;
-    margin: 0;
-    margin-top: 10px;
-
-    height: 230px;
-  }
-
-  .gribouillis {
-    display: none;
-  }
-
-  .container {
-    max-width: 400px;
-  }
-
   .contactDiv {
-    margin-left: 50px;
+    margin-left: -2px;
+  }
+  .pdf {
+    margin-left: -0.4vw;
   }
 
-  .scrollDown {
-    display: none;
+  .info-container {
+    width: 92vw;
   }
-  .modal {
-    width: 100%;
-    height: 230px;
-    max-width: 100vw;
+  .caroussel-container {
+    width: 100vw;
+    height: 32vh;
 
+    background-image: none;
+  }
+  .container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .logo1 {
+    width: 80vw;
+  }
+
+  .contenuHome {
+    margin-top: 3.5vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column-reverse;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  /* .modal-container {
+   
+  } */
+
+  .modal {
+    height: 100%;
+    width: 100%;
+
+    /* max-width: 100vw; */
 
     background-color: white;
     font-family: "Basteleur-Moonlight";
     border: 1px gray solid;
 
-    margin: 0;
-    margin-top: -30%;
+    /* border: solid black 1px; */
 
     z-index: 1000;
 
-    padding: 2%;
-
     font-family: "Sprat-ExtendedLight";
-    font-size: 13px;
-  }
-}
-@media (max-width: 360px) {
-  .header {
+    /* 
     display: flex;
-
-    flex-direction: column;
-  }
-  .eliott {
-    width: 35%;
-    margin-left: -180px;
-  }
-
-  .logo1 {
-    height: 50px;
-    width: 300px;
-    object-fit: contain;
-
-    font-size: 37px;
-    margin-top: 35px;
-    margin-left: -27px;
-  }
-  .info {
-    font-family: "Sprat-ExtendedLight";
-
-    margin-right: 396px;
-    margin-top: 100px;
-    position: absolute;
-  }
-
-  .pdf {
-    margin-right: 26.5px;
-  }
-  .main {
-    justify-content: center;
-    width: 250px;
-    margin-left: 30px;
-  }
-  .contenuHome {
-    align-items: center;
-  }
-  .expositions {
-    margin-top: 0px;
-    width: 333px;
-    margin-left: -13px;
+    flex-wrap: wrap; */
+    /* justify-content: center; */
   }
   .caroussel {
-    justify-content: center;
-    width: 330px;
-    margin: 0;
-    margin-top: 10px;
+    width: 100%;
+    /* border: solid red 1px; */
+    height: 28vh;
+    margin-top: 0.3vh;
 
-    height: 230px;
+    width: 87vw;
   }
-
   .gribouillis {
     display: none;
-  }
-
-  .container {
-    max-width: 400px;
-  }
-
-  .contactDiv {
-    margin-left: 50px;
   }
 
   .scrollDown {
     display: none;
   }
-  .modal {
-    width: 100%;
-    height: 230px;
-    max-width: 100vw;
-
+  .info-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    background-color: white;
-    font-family: "Basteleur-Moonlight";
-    border: 1px gray solid;
-
-    margin: 0;
-    margin-top: -30%;
-
-    z-index: 1000;
-
-    padding: 2%;
-
-    font-family: "Sprat-ExtendedLight";
-    font-size: 13px;
+    justify-content: flex-start;
+  }
+  .expositions {
+    overflow: hidden;
+    height: 100%;
+  }
+  .expositions {
+    margin-top: 0vh;
+    width: 100.5%;
+  }
+  .modalcontent p {
+    font-size: 10px;
   }
 }

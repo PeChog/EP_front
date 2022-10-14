@@ -16,6 +16,8 @@ import CreateImage from "./BackOffice/pages/CRUD_Images/CreateImage";
 
 import AddPdf from "./BackOffice/pages/AddPdf";
 
+import Helmet from "react-helmet";
+
 import Home from "./ClientFront/pages/Home";
 import Login from "./ClientFront/pages/Login";
 
@@ -33,6 +35,11 @@ function App() {
   };
   return (
     <Router>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Eliott Paquet</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
