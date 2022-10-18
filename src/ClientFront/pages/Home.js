@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 // import ReactSimplyCarousel from "react-simply-carousel";
-import { Link } from "react-router-dom";
-import gribouillis from "../../assets/images/Gribouillis.png";
+import { Link, useLocation } from "react-router-dom";
+
 import Logo from "../../assets/images/logo.png";
-function Home() {
+import { Zoom, Fade, LightSpeed } from "react-reveal";
+
+function Home(props) {
   const [data, setData] = useState([]);
   const [dataImage, setDataImage] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -14,6 +16,9 @@ function Home() {
   const instaURL = `//www.instagram.com/eliott_paquet/`;
 
   const [modalContact, setModalContact] = useState(false);
+
+  const location = useLocation();
+  const input = location.state?.input;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,42 +39,58 @@ function Home() {
 
     fetchData();
   }, []);
-  return (
+  return isLoading ? (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "25%",
+      }}
+    >
+      <span className="loading">En cours de chargement</span>
+    </div>
+  ) : (
     <>
       <div className="container">
-        <img
-          className="logo1"
-          onClick={() => {
-            setModalContact(false);
-          }}
-          alt="logo"
-          src={Logo}
-        />
+        <LightSpeed left delay={200}>
+          <img
+            className="logo1"
+            onClick={() => {
+              setModalContact(false);
+            }}
+            alt="logo"
+            src={Logo}
+          />
+        </LightSpeed>
+
         <div className="info-container">
           <div className="info">
-            <div
-              className="contactDiv"
-              onClick={() => {
-                setModalContact(true);
-                console.log("click");
-              }}
-            >
-              cntct
-            </div>
-            <a
-              href={
-                "https://drive.google.com/file/d/1irrtsegb9VNW5oQuS8HZSCzVH7-4hoKj/view?usp=sharing"
-              }
-              download
-              style={{
-                cursor: "pointer",
-                textDecoration: "none",
-                color: "black",
-              }}
-              className="pdf"
-            >
-              pdf
-            </a>
+            <LightSpeed right delay={800}>
+              <div
+                className="contactDiv"
+                onClick={() => {
+                  setModalContact(true);
+                  console.log("click");
+                }}
+              >
+                cntct
+              </div>
+            </LightSpeed>
+            <LightSpeed right delay={800}>
+              <a
+                href="https://drive.google.com/file/d/1irrtsegb9VNW5oQuS8HZSCzVH7-4hoKj/view"
+                download
+                style={{
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "black",
+                }}
+                className="pdf"
+              >
+                pdf
+              </a>
+            </LightSpeed>
           </div>
         </div>
 
@@ -80,24 +101,27 @@ function Home() {
           }}
         >
           <div className="contenuHome ">
-            <div className="expositions">
-              {data
-                .sort((a, b) => a.exposition_index - b.exposition_index)
-                .map((exposition) => {
-                  return (
-                    <div className="list">
-                      <div key={exposition._id} className="date">
-                        {exposition.expo_date}
+            <Fade bottom delay={800}>
+              <div className="expositions">
+                {data
+                  .sort((a, b) => a.exposition_index - b.exposition_index)
+                  .map((exposition) => {
+                    return (
+                      <div className="list">
+                        <div key={exposition._id} className="date">
+                          {exposition.expo_date}
+                        </div>
+                        <div className="description">
+                          {exposition.expo_description}
+                        </div>
                       </div>
-                      <div className="description">
-                        {exposition.expo_description}
-                      </div>
-                    </div>
-                  );
-                })}
-            </div>
+                    );
+                  })}
+              </div>
+            </Fade>
 
             <div className="caroussel-container">
+              {/* <Zoom duration={500}> */}
               <div className="caroussel">
                 {modalContact ? (
                   <div className="modal-container">
@@ -175,16 +199,19 @@ function Home() {
                       }
                     })}
               </div>
+              {/* </Zoom> */}
+
               {/* <img alt="gribouillis" src={gribouillis} /> */}
             </div>
           </div>
         </div>
-
-        <img
-          src={require("../../assets/images/scroll-down-icon-16.jpeg")}
-          alt="scrollDown"
-          className="scrollDown"
-        ></img>
+        <Fade bottom delay={1500}>
+          <img
+            src={require("../../assets/images/scroll-down-icon-16.jpeg")}
+            alt="scrollDown"
+            className="scrollDown"
+          ></img>
+        </Fade>
       </div>
     </>
   );

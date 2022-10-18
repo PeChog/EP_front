@@ -40,6 +40,72 @@ body {
   position: absolute;
 }
 
+.pdf:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  top: 21px;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.pdf:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.contactDiv:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  top: 21px;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.contactDiv:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.loading {
+  color: "black";
+  font-family: "Basteleur-Moonlight";
+  font-size: 25px;
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 800ms infinite;
+  animation: ellipsis steps(4, end) 800ms infinite;
+  content: "\2026";
+  /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 40px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 40px;
+  }
+}
 /* .logo {
   /* font-family: "Basteleur-Bold";
   font-size: 60px;
